@@ -193,6 +193,34 @@ VITE_API_URL=http://localhost:8080/api
 
 ---
 
+## 🌍 Deployment
+
+Aplikasi ini dapat di-deploy dengan beberapa cara, berikut adalah panduan singkatnya.
+
+### 1. Frontend via Vercel (Terhubung ke Backend Lokal)
+Sangat berguna untuk testing aplikasi dari perangkat lain (seperti HP) tanpa harus deploy backend ke cloud.
+1. Jalankan backend lokal Anda: `go run ./cmd/main.go`
+2. Gunakan **localtunnel** (atau ngrok) untuk membuat koneksi aman (HTTPS) ke backend lokal Anda:
+   ```powershell
+   npx localtunnel --port 8080
+   ```
+3. Copy URL yang didapatkan (misal: `https://my-app.loca.lt`).
+4. Buka dashboard Vercel, ke **Settings > Environment Variables**, lalu tambahkan variable:
+   - Key: `VITE_API_URL`
+   - Value: `https://my-app.loca.lt/api` (URL dari langkah 3 ditambah `/api`)
+5. Buka tab **Deployments** dan lakukan **Redeploy**.
+
+> ⚠️ **Catatan Penting:** Jangan pernah memasukkan `http://localhost:8080/api` ke Vercel karena akan ditolak oleh browser akibat fitur keamanan *Mixed Content* dan menghasilkan error CORS.
+
+### 2. Fullstack via VPS (Production)
+Terdapat script otomatis `deploy.ps1` untuk melakukan deployment ke VPS Linux (seperti Oracle Cloud/Ubuntu).
+```powershell
+.\deploy.ps1 -ServerIP "150.230.xxx.xxx"
+```
+Script ini akan melakukan build React, compile Go binary (Linux ARM64), lalu mengirimkannya ke server menggunakan `scp` secara otomatis.
+
+---
+
 ## 📝 Troubleshooting
 
 | Masalah | Solusi |

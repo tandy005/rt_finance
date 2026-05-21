@@ -25,7 +25,7 @@ Butuh **3 terminal** yang berjalan bersamaan.
 
 ```powershell
 # Masuk ke folder project
-cd C:\Users\mriza\Documents\Latihan\rt_finance
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance
 
 # Pastikan Docker Desktop sudah terbuka di system tray!
 # Jalankan database
@@ -45,7 +45,7 @@ Container rt_finance_db  Running
 
 ```powershell
 # Masuk ke folder backend
-cd C:\Users\mriza\Documents\Latihan\rt_finance\backend
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance\backend
 
 # Jalankan server
 go run ./cmd/main.go
@@ -71,7 +71,7 @@ go run ./cmd/main.go
 
 ```powershell
 # Masuk ke folder frontend
-cd C:\Users\mriza\Documents\Latihan\rt_finance\frontend
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance\frontend
 
 # Jalankan dev server
 npm run dev
@@ -86,6 +86,34 @@ VITE v8.x.x  ready in xxx ms
 
 > ✅ **Cek**: Buka browser → http://localhost:5173
 > Harus muncul halaman login RT Finance Hub.
+
+---
+
+### 🌍 Alternatif: Menjalankan untuk Akses Online (Vercel + Ngrok)
+
+Jika Anda ingin website Vercel Anda yang sudah online bisa menarik data dari laptop Anda (agar bisa dibuka oleh orang lain), jalankan **3 Terminal** berikut setiap kali komputer dinyalakan:
+
+1. **Terminal 1 — Database (Docker)**
+   ```powershell
+   cd C:\Users\mriza\Documents\Latihan\website\rt_finance
+   docker compose up -d
+   ```
+
+2. **Terminal 2 — Backend API (Go)**
+   ```powershell
+   cd C:\Users\mriza\Documents\Latihan\website\rt_finance\backend
+   go run ./cmd/main.go
+   ```
+
+3. **Terminal 3 — Ngrok Tunnel**
+   ```powershell
+   ngrok http 8080
+   ```
+   *(Lalu copy link HTTPS yang didapat, dan update `VITE_API_URL` di dashboard Vercel jika link-nya berubah).*
+
+> **💡 Catatan Penting:**
+> - Saat menggunakan alur ini, Anda **tidak perlu** menjalankan `npm run dev` karena frontend-nya sudah dilayani oleh Vercel.
+> - Web Vercel hanya akan berfungsi selama laptop Anda menyala dan ketiga terminal di atas tidak ditutup.
 
 ---
 
@@ -130,7 +158,7 @@ Jika database kosong atau ingin reset data dummy:
 
 ```powershell
 # Di folder backend (terminal terpisah dari server)
-cd C:\Users\mriza\Documents\Latihan\rt_finance\backend
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance\backend
 go run ./seeder/seeder.go
 ```
 
@@ -153,7 +181,7 @@ Data yang dibuat:
 
 ```powershell
 # Hentikan database
-cd C:\Users\mriza\Documents\Latihan\rt_finance
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance
 docker compose down
 ```
 
@@ -226,7 +254,7 @@ taskkill /PID <PID> /F
 ### ❌ Backend build error setelah update kode
 
 ```powershell
-cd C:\Users\mriza\Documents\Latihan\rt_finance\backend
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance\backend
 
 # Download dependency baru
 go mod tidy
@@ -243,7 +271,7 @@ go run ./cmd/main.go
 ### ❌ Frontend tidak muncul atau blank page
 
 ```powershell
-cd C:\Users\mriza\Documents\Latihan\rt_finance\frontend
+cd C:\Users\mriza\Documents\Latihan\website\rt_finance\frontend
 
 # Reinstall dependencies
 npm install
@@ -358,4 +386,4 @@ go vet ./...
 
 ---
 
-*Dokumen ini diperbarui terakhir: 2026-05-20*
+*Dokumen ini diperbarui terakhir: 2026-05-21*

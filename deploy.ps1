@@ -92,3 +92,4 @@ Write-Host "`n🎉 Deploy selesai!" -ForegroundColor Magenta
 Write-Host "   Buka: http://$ServerIP`n" -ForegroundColor White
 
 Set-Location $Root
+

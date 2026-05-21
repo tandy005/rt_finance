@@ -9,7 +9,12 @@ import (
 // CORSMiddleware handles Cross-Origin Resource Sharing headers
 func CORSMiddleware(allowedOrigin string) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Header("Access-Control-Allow-Origin", allowedOrigin)
+		origin := c.Request.Header.Get("Origin")
+		if origin != "" {
+			c.Header("Access-Control-Allow-Origin", origin)
+		} else {
+			c.Header("Access-Control-Allow-Origin", allowedOrigin)
+		}
 		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH")
 		c.Header("Access-Control-Allow-Headers", "Origin, Content-Type, Content-Length, Accept-Encoding, Authorization, X-Request-ID")
 		c.Header("Access-Control-Expose-Headers", "Content-Disposition")
