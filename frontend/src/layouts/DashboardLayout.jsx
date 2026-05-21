@@ -8,7 +8,7 @@ const DashboardLayout = () => {
   const sidebarCollapsed = useUIStore((s) => s.sidebarCollapsed)
 
   return (
-    <div className="flex h-screen bg-slate-50 dark:bg-slate-950 overflow-hidden">
+    <div className="flex h-screen bg-rt-light dark:bg-rt-deep overflow-hidden">
       {/* Sidebar */}
       <Sidebar />
 

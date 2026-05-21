@@ -50,7 +50,7 @@ const CategoryForm = ({ defaultValues, onSubmit, loading }) => {
 
 // ── Color palette for category cards ──────────────────────────
 const PALETTE = [
-  { bg: 'bg-blue-50 dark:bg-blue-900/20',    icon: 'text-blue-500',    border: 'border-blue-100 dark:border-blue-800' },
+  { bg: 'bg-rt-goldlight/20 dark:bg-rt-deep/20',    icon: 'text-rt-primary',    border: 'border-rt-goldlight dark:border-rt-deep' },
   { bg: 'bg-emerald-50 dark:bg-emerald-900/20', icon: 'text-emerald-500', border: 'border-emerald-100 dark:border-emerald-800' },
   { bg: 'bg-violet-50 dark:bg-violet-900/20',  icon: 'text-violet-500',  border: 'border-violet-100 dark:border-violet-800' },
   { bg: 'bg-amber-50 dark:bg-amber-900/20',    icon: 'text-amber-500',   border: 'border-amber-100 dark:border-amber-800' },
@@ -176,7 +176,7 @@ const Categories = () => {
           {isAdmin && !search && (
             <button
               onClick={openCreate}
-              className="mt-3 text-xs text-blue-500 hover:underline"
+              className="mt-3 text-xs text-rt-primary hover:underline"
             >
               + Tambah kategori pertama
             </button>
@@ -200,7 +200,7 @@ const Categories = () => {
                       <button
                         id={`edit-cat-${cat.id}`}
                         onClick={() => openEdit(cat)}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                        className="p-1.5 rounded-lg text-slate-400 hover:text-rt-primary hover:bg-rt-goldlight/20 dark:hover:bg-rt-deep/20 transition-colors"
                         title="Edit"
                       >
                         <Pencil size={13} />

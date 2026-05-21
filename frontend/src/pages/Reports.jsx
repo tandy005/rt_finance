@@ -42,7 +42,7 @@ const SummaryCard = ({ icon: Icon, label, value, color }) => {
   const colorMap = {
     emerald: 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400',
     red:     'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400',
-    blue:    'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400',
+    blue:    'bg-rt-goldlight/20 dark:bg-rt-deep/20 text-rt-primary dark:text-rt-gold',
   }
   return (
     <div className="card p-4 flex items-center gap-4">

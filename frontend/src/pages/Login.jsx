@@ -37,28 +37,28 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+    <div className="bg-rt-primary border border-rt-dark rounded-3xl p-8 shadow-2xl">
       {/* Logo */}
       <div className="flex flex-col items-center mb-8">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-xl mb-4">
-          <Building2 size={28} className="text-white" />
+        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl mb-4 overflow-hidden border-2 border-white/20">
+          <img src="/logo.png" alt="Logo RT" className="w-full h-full object-cover" />
         </div>
         <h1 className="text-2xl font-bold text-white">RT Finance Hub</h1>
-        <p className="text-sm text-blue-200 mt-1">Manajemen Keuangan RT Transparan</p>
+        <p className="text-sm text-rt-goldlight mt-1">Manajemen Keuangan RT Transparan</p>
       </div>
 
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Email */}
         <div>
-          <label className="block text-xs font-medium text-blue-100 mb-1.5">Email</label>
+          <label className="block text-xs font-medium text-rt-goldlight mb-1.5">Email</label>
           <div className="relative">
-            <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-rt-light/60" />
             <input
               {...register('email')}
               type="email"
               placeholder="admin@rtfinance.com"
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400/60 focus:border-transparent transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-rt-light/60 text-sm focus:outline-none focus:ring-2 focus:ring-rt-gold/60 focus:border-transparent transition-all"
             />
           </div>
           {errors.email && (
@@ -68,19 +68,19 @@ const Login = () => {
 
         {/* Password */}
         <div>
-          <label className="block text-xs font-medium text-blue-100 mb-1.5">Password</label>
+          <label className="block text-xs font-medium text-rt-goldlight mb-1.5">Password</label>
           <div className="relative">
-            <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-rt-light/60" />
             <input
               {...register('password')}
               type={showPassword ? 'text' : 'password'}
               placeholder="••••••••"
-              className="w-full pl-10 pr-12 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400/60 focus:border-transparent transition-all"
+              className="w-full pl-10 pr-12 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-rt-light/60 text-sm focus:outline-none focus:ring-2 focus:ring-rt-gold/60 focus:border-transparent transition-all"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-rt-light/60 hover:text-white transition-colors"
             >
               {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
             </button>
@@ -94,7 +94,7 @@ const Login = () => {
         <Button
           type="submit"
           loading={isSubmitting}
-          className="w-full py-3 mt-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-900/40 transition-all"
+          className="w-full py-3 mt-2 bg-rt-gold hover:bg-rt-goldlight text-rt-deep font-semibold rounded-xl shadow-lg shadow-rt-deep/40 transition-all"
           icon={<LogIn size={16} />}
         >
           {isSubmitting ? 'Sedang Masuk...' : 'Masuk'}
@@ -106,7 +106,7 @@ const Login = () => {
         <p className="text-xs text-center text-slate-400 mb-2 font-medium">Demo Credentials</p>
         <div className="grid grid-cols-2 gap-2 text-xs text-slate-300">
           <div>
-            <p className="text-blue-300 font-semibold">Admin</p>
+            <p className="text-rt-gold font-semibold">Admin</p>
             <p>admin@rtfinance.com</p>
             <p>admin123</p>
           </div>

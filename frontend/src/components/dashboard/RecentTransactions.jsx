@@ -99,7 +99,7 @@ const RecentTransactions = ({ data = [], loading }) => {
       <div className="pt-2">
         <Link
           to="/transactions"
-          className="flex items-center justify-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline"
+          className="flex items-center justify-center gap-1.5 text-xs font-medium text-rt-primary dark:text-rt-gold hover:underline"
         >
           Lihat semua transaksi <ArrowRight size={12} />
         </Link>

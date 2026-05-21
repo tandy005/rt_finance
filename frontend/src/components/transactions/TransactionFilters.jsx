@@ -41,7 +41,7 @@ const TransactionFilters = ({ filters, onChange, categories = [] }) => {
           className={`
             flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium border transition-all
             ${showAdvanced || activeCount > 0
-              ? 'bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-900/20 dark:border-blue-700 dark:text-blue-400'
+              ? 'bg-rt-goldlight/20 border-rt-gold text-rt-primary dark:bg-rt-deep/20 dark:border-rt-dark dark:text-rt-gold'
               : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300'
             }
           `}
@@ -49,7 +49,7 @@ const TransactionFilters = ({ filters, onChange, categories = [] }) => {
           <Filter size={14} />
           Filter
           {activeCount > 0 && (
-            <span className="w-4 h-4 text-xs flex items-center justify-center bg-blue-600 text-white rounded-full">
+            <span className="w-4 h-4 text-xs flex items-center justify-center bg-rt-primary text-white rounded-full">
               {activeCount}
             </span>
           )}

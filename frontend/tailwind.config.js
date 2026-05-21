@@ -8,20 +8,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
-        brand: {
-          50:  '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+        rt: {
+          primary: '#5B0D0D', // Primary Dark Red
+          dark: '#8A1A1A', // Hover/Active
+          gold: '#D4AF37', // Accent Gold
+          goldlight: '#F6D77A', // Soft Accent
+          deep: '#2D0707', // Very Dark Red
+          light: '#FFF8E6', // Warm Light Background
         },
       },
       animation: {

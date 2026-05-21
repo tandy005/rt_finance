@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* User avatar */}
         {user && (
           <div className="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-slate-700">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow">
+            <div className="w-8 h-8 rounded-full bg-rt-primary border border-rt-dark flex items-center justify-center text-white text-xs font-bold shadow">
               {user.name?.charAt(0).toUpperCase()}
             </div>
             <div className="hidden sm:block">

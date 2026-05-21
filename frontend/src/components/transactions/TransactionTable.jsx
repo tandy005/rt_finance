@@ -118,7 +118,7 @@ const TransactionTable = ({
                   <button
                     id={`edit-tx-${info.row.original.id}`}
                     onClick={() => onEdit?.(info.row.original)}
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-rt-primary hover:bg-rt-goldlight/20 dark:hover:bg-rt-deep/20 transition-colors"
                     title="Edit"
                   >
                     <Pencil size={14} />
@@ -181,11 +181,11 @@ const TransactionTable = ({
         <table className="w-full text-left">
           <thead>
             {table.getHeaderGroups().map((hg) => (
-              <tr key={hg.id}>
+              <tr key={hg.id} className="bg-rt-primary text-white rounded-t-lg overflow-hidden">
                 {hg.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="py-2.5 px-3 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700 whitespace-nowrap"
+                    className="py-2.5 px-3 text-xs font-semibold text-white uppercase tracking-wider whitespace-nowrap first:rounded-tl-lg last:rounded-tr-lg"
                   >
                     {flexRender(header.column.columnDef.header, header.getContext())}
                   </th>

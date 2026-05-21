@@ -10,7 +10,7 @@ const formatCurrency = (val) =>
 
 const StatCard = ({ title, value, icon: Icon, color, trend, trendLabel, loading }) => {
   const colorMap = {
-    blue:    { bg: 'bg-blue-50 dark:bg-blue-900/20',    icon: 'text-blue-600 dark:text-blue-400',    border: 'border-blue-100 dark:border-blue-800' },
+    blue:    { bg: 'bg-rt-goldlight/20 dark:bg-rt-deep/20',    icon: 'text-rt-primary dark:text-rt-gold',    border: 'border-rt-goldlight dark:border-rt-deep' },
     emerald: { bg: 'bg-emerald-50 dark:bg-emerald-900/20', icon: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-100 dark:border-emerald-800' },
     red:     { bg: 'bg-red-50 dark:bg-red-900/20',      icon: 'text-red-600 dark:text-red-400',      border: 'border-red-100 dark:border-red-800' },
     amber:   { bg: 'bg-amber-50 dark:bg-amber-900/20',  icon: 'text-amber-600 dark:text-amber-400',  border: 'border-amber-100 dark:border-amber-800' },

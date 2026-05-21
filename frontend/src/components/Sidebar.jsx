@@ -28,14 +28,14 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`relative flex flex-col bg-gradient-to-b from-slate-900 to-slate-800 text-white transition-all duration-300 ease-in-out flex-shrink-0 ${
+      className={`relative flex flex-col bg-rt-primary text-white transition-all duration-300 ease-in-out flex-shrink-0 ${
         sidebarCollapsed ? 'w-16' : 'w-64'
       }`}
     >
       {/* Logo */}
       <div className={`flex items-center gap-3 px-4 py-5 border-b border-white/10 ${sidebarCollapsed ? 'justify-center' : ''}`}>
-        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
-          <Building2 size={18} className="text-white" />
+        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden border border-white/20">
+          <img src="/logo.png" alt="Logo RT" className="w-full h-full object-cover" />
         </div>
         {!sidebarCollapsed && (
           <div>
@@ -54,8 +54,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group ${
                 isActive
-                  ? 'bg-blue-600/90 text-white shadow-md shadow-blue-900/40'
-                  : 'text-slate-400 hover:bg-white/10 hover:text-white'
+                  ? 'bg-rt-dark text-white shadow-md shadow-rt-deep/40'
+                  : 'text-rt-light/70 hover:bg-white/10 hover:text-rt-light'
               } ${sidebarCollapsed ? 'justify-center' : ''}`
             }
             title={sidebarCollapsed ? label : undefined}
@@ -70,14 +70,14 @@ const Sidebar = () => {
       <div className="border-t border-white/10 p-3 space-y-2">
         {!sidebarCollapsed && user && (
           <div className="flex items-center gap-2 px-2 py-1.5">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center flex-shrink-0 text-xs font-bold">
+            <div className="w-8 h-8 rounded-full bg-rt-gold flex items-center justify-center flex-shrink-0 text-rt-deep text-xs font-bold shadow-md">
               {user.name?.charAt(0).toUpperCase()}
             </div>
             <div className="overflow-hidden">
               <p className="text-xs font-semibold text-white truncate">{user.name}</p>
               <div className="flex items-center gap-1">
-                <Shield size={10} className="text-blue-400" />
-                <p className="text-xs text-slate-400 capitalize">{user.role}</p>
+                <Shield size={10} className="text-rt-gold" />
+                <p className="text-xs text-rt-goldlight capitalize">{user.role}</p>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Sidebar = () => {
       {/* Collapse toggle button */}
       <button
         onClick={toggleSidebar}
-        className="absolute -right-3 top-20 w-6 h-6 rounded-full bg-slate-700 border border-slate-600 text-slate-300 hover:text-white hover:bg-slate-600 flex items-center justify-center shadow-md transition-all z-10"
+        className="absolute -right-3 top-20 w-6 h-6 rounded-full bg-rt-dark border border-rt-primary text-rt-goldlight hover:text-rt-gold hover:bg-rt-deep flex items-center justify-center shadow-md transition-all z-10"
       >
         {sidebarCollapsed ? <ChevronRight size={12} /> : <ChevronLeft size={12} />}
       </button>
